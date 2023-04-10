@@ -51,4 +51,15 @@ public static class Driver
             return false;
         }
     }
+
+    public static void SendText(this IWebDriver driver, By by, string text)
+    {
+        if (IsElementPresent(driver, by))
+        {
+            var inputElement = driver.FindElement(by);
+            inputElement.Click();
+            inputElement.Clear();
+            inputElement.SendKeys(text);
+        }
+    }
 }
