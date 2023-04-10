@@ -17,5 +17,5 @@ The project also includes the log4net logging.
 #### Running Tests
 - Install Google Chrome
 - Update Chrome driver in NuGet Packages if needed
-- Add your username and password in GithubTests -> Utilities -> BaseSetup.cs
+- Add your username and password in Config.cfg
 - Run tests from GithubTests -> Tests
