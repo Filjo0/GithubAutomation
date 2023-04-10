@@ -1,23 +1,20 @@
 ﻿using GithubAutomation.Navigation;
-using GithubAutomation.Pages;
 using GithubAutomation.Selenium;
 using GithubTests.Utilities;
 using NUnit.Framework;
 
-namespace GithubTests.Tests
+namespace GithubTests.Tests;
+
+public class LoginTests : BaseSetup
 {
-    [TestFixture]
-    public class LoginTests : BaseSetup
+    /// <summary>
+    /// Checks that user can login.
+    /// </summary>
+    [Test]
+    public void User_Can_Login()
     {
-        /// <summary>
-        /// Checks that user can login.
-        /// </summary>
-        [Test]
-        public void User_Can_Login()
-        {
-            Assert.That(NavigationPanel.GetUsername(), Is.EqualTo(Driver.Username), "Failed to login");
-        }
-        
-        // Negative test should be added.
+        Assert.That(NavigationPanel.GetUsername(), Is.EqualTo(Driver.Username), "Failed to login.");
     }
+
+    // Refactor: Negative test should be added.
 }

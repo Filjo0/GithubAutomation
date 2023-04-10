@@ -43,8 +43,8 @@ public static class LoginPage
 
         public void Login()
         {
-            Driver.Instance.FindElement(By.Id("login_field")).SendKeys(_username);
-            Driver.Instance.FindElement(By.Id("password")).SendKeys(_password);
+            Driver.Instance.SendText(By.Id("login_field"), _username);
+            Driver.Instance.SendText(By.Id("password"), _password);
             Driver.Instance.FindElement(By.ClassName("js-sign-in-button")).Click();
         }
     }

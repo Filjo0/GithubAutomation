@@ -10,7 +10,7 @@ namespace GithubAutomation.Navigation
             ExpandNewDropMenu();
             Driver.Instance.FindElement(By.XPath($"//a[contains(text(), '{newDropdownItem.ToAttribute()}')]")).Click();
         }
-        
+
         public static void SelectProfileDropdownItem(ProfileDropdownItem profileDropdownItem)
         {
             ExpandProfileDropMenu();

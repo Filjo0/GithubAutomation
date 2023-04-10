@@ -5,15 +5,15 @@ namespace GithubTests.Utilities;
 
 public class RepositoryTest : BaseSetup
 {
-    protected static string Name => TestContext.CurrentContext.Test.Name;
+    public static string Name => TestContext.CurrentContext.Test.Name;
     private static string Description => TestContext.CurrentContext.Test.Name;
     private const bool IsPrivate = true;
 
     [SetUp]
-    public static void Create()
+    public static void CreatePrivate()
     {
         NewRepoPage.GoTo();
-        NewRepoPage.CreateRepo(Name).WithDescription(Description).IsPrivate(IsPrivate).Publish();
+        NewRepoPage.CreateRepo(Name).WithDescription(Description).IsPrivate(IsPrivate).Add();
     }
 
     [TearDown]

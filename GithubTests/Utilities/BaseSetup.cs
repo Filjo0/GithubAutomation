@@ -9,7 +9,6 @@ using NUnit.Framework.Interfaces;
 
 namespace GithubTests.Utilities;
 
-[TestFixture]
 public class BaseSetup
 {
     private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod()?.DeclaringType);
@@ -27,7 +26,6 @@ public class BaseSetup
                 .LoginAs(Driver.Username)
                 .WithPassword(Driver.Password)
                 .Login();
-            
         }
         catch (Exception exception)
         {
@@ -44,7 +42,6 @@ public class BaseSetup
         {
             Log.Error("Failed to test " + TestContext.CurrentContext.Test.Name);
             Driver.TakeScreenshot();
-            Driver.Close();
         }
 
         Driver.Close();

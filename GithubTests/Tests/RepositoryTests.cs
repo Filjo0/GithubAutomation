@@ -12,7 +12,7 @@ public class RepositoryTests : RepositoryTest
     [Test]
     public void Can_Create_Repo()
     {
-        Assert.That(RepositoriesPage.IsRepositoryFound(RepositoryTest.Name), Is.True, "Failed to locate added repository.");
+        Assert.That(RepositoriesPage.IsRepositoryDisplayed(Name), Is.True, "Failed to locate added repository.");
     }
 
     /// <summary>
@@ -21,7 +21,7 @@ public class RepositoryTests : RepositoryTest
     [Test]
     public void Can_Open_Repo()
     {
-        RepositoriesPage.SelectRepository(RepositoryTest.Name);
-        Assert.That(RepositoryPage.GetRepoName(), Is.EqualTo(RepositoryTest.Name), "Failed to locate the repository.");
+        RepositoriesPage.SelectRepository(Name);
+        Assert.That(RepositoryPage.GetRepoName(), Is.EqualTo(Name), "Failed to locate the repository.");
     }
 }
