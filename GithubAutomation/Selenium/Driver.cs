@@ -8,14 +8,9 @@ namespace GithubAutomation.Selenium;
 public static class Driver
 {
     public static IWebDriver Instance { get; private set; }
-
-    // Refactor: Add it to the config file.
-    public static string BaseAddress => "https://github.com/";
-
-    // Change to your username and to your password.
-    // Refactor: it should be added to the config file.
-    public const string Username = "?";
-    public const string Password = "?";
+    public static string BaseAddress => Configuration.Configuration.ParsedData["General"]["BaseAddress"];
+    public static readonly string Username = Configuration.Configuration.ParsedData["General"]["Username"];
+    public static readonly string Password = Configuration.Configuration.ParsedData["General"]["Password"];
 
     public static void Initialize()
     {
