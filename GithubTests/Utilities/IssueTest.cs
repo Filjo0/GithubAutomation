@@ -5,9 +5,12 @@ namespace GithubTests.Utilities;
 
 public class IssueTest : BaseSetup
 {
-    protected static readonly string IssueTitle = TestContext.CurrentContext.Test.Name;
-    private static readonly string IssueComment = TestContext.CurrentContext.Test.Name;
-    private const string FileName = "";
+    protected static string IssueTitle => TestContext.CurrentContext.Test.Name;
+
+    private static string IssueComment => TestContext.CurrentContext.Test.Name;
+
+    // Refactor: File uploading should be handled by generic method.
+    private string FileName = "";
 
     [SetUp]
     public void Create()

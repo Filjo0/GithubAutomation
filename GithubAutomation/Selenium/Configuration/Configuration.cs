@@ -18,7 +18,7 @@ public static class Configuration
         }
         catch (FileNotFoundException)
         {
-            throw new Exception("Could not find configuration file at: " + AppContext.BaseDirectory);
+            throw new Exception("Could not find configuration file at: " + AppDomain.CurrentDomain.BaseDirectory);
         }
     }
 }
